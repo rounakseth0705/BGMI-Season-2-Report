@@ -121,7 +121,11 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .hero{padding-top:112px;overflow:hidden}
 .hero .heroChar{position:absolute;right:-4%;bottom:0;height:96%;z-index:0;pointer-events:none;filter:drop-shadow(-30px 0 70px rgba(0,0,0,.7));-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent);opacity:0;animation:charIn 1.4s var(--ease) .25s forwards;transform:translateX(var(--chx,0))}
 @keyframes charIn{to{opacity:1}}
-.heroPhoto{position:absolute;inset:0;z-index:-1;background:url('assets/slide1-bg-image.jpeg') center 30%/cover no-repeat;opacity:.34;filter:grayscale(.3) contrast(1.08) brightness(.72);-webkit-mask-image:linear-gradient(100deg,#000 8%,rgba(0,0,0,.35) 52%,transparent 78%);mask-image:linear-gradient(100deg,#000 8%,rgba(0,0,0,.35) 52%,transparent 78%)}
+.heroPhoto{position:absolute;top:0;left:0;right:0;height:100vh;height:100svh;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(8,8,8,.55) 0%,transparent 22%,transparent 72%,var(--bg) 100%),
+    linear-gradient(90deg,rgba(8,8,8,.82) 0%,rgba(8,8,8,.55) 42%,rgba(8,8,8,.2) 100%),
+    url('assets/slide1-bg-image.jpeg') center/cover no-repeat}
 .zone{position:absolute;right:5%;top:28%;width:min(46vw,560px);aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(154,167,176,.32);box-shadow:0 0 60px rgba(154,167,176,.12) inset,0 0 40px rgba(154,167,176,.1);z-index:0;pointer-events:none;animation:zonepulse 6s ease-in-out infinite}
 .zone::after{content:"";position:absolute;inset:18%;border-radius:50%;border:1px dashed rgba(255,153,50,.4);animation:spin 40s linear infinite}
 @keyframes zonepulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(.93);opacity:1}}
@@ -343,6 +347,7 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 </style>
 </head>
 <body>
+<div class="heroPhoto" aria-hidden="true"></div>
 <div class="atmos">
   <div class="layer l-map" id="lmap"></div>
   <div class="layer l-glow" id="lglow"></div>
@@ -373,7 +378,6 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 
 <!-- 1 COVER -->
 <section class="slide hero" id="cover" data-title="Cover">
-  <div class="heroPhoto" aria-hidden="true"></div>
   <div class="zone" aria-hidden="true"></div>
   <img class="heroChar" src="assets/character.png" alt=""/>
   <div class="top">
