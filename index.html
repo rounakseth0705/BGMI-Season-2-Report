@@ -324,6 +324,9 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .mz .vt .badge{position:absolute;left:12px;bottom:11px;z-index:3;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--o);background:rgba(8,8,8,.7);border:1px solid rgba(255,153,50,.35);padding:5px 10px;backdrop-filter:blur(4px);transition:opacity .3s}
 .mz .vt.playing .badge{opacity:0}
 .mz .vt.auto{cursor:default}
+.mz .vt.zoom video{transform:scale(var(--zoom,1.3));transform-origin:center}
+.mz .vt.crop video{object-fit:cover}
+.mz .vt.rot video{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg)}
 
 /* print-ish safety */
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
@@ -466,16 +469,12 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
       <div class="bul" style="--d:.36s"><span class="bn">03</span><p>An optional booster with no obligation attached — every submission came from MVPs <b>working past their required scope</b>, a useful signal of where the highest-intent group sits heading into Season 3.</p></div>
     </div>
   </div>
-  <div class="mz" data-tree='{"r":[{"c":[0,{"r":[1,2]}]},{"c":[{"r":[3,4,5]},{"r":[6,{"c":[7,8]}]}]}]}' data-tree-sm='{"c":[0,{"r":[1,2]},{"r":[3,4,5]},{"r":[6,7,8]}]}'>
+  <div class="mz" data-tree='{"r":[0,{"c":[{"r":[1,2]},{"r":[3,4]}]}]}' data-tree-sm='{"c":[0,{"r":[1,2]},{"r":[3,4]}]}'>
     <div class="vt auto" style="--d:0.00s"><video src="assets/media/offlineActivation1.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 1"></video><span class="badge">Task 4 · Offline Activation</span></div>
     <div class="vt auto" style="--d:0.04s"><video src="assets/media/offlineActivation2.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 2"></video></div>
     <div class="vt auto" style="--d:0.08s"><video src="assets/media/offlineActivation3.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 3"></video></div>
     <div class="vt auto" style="--d:0.12s"><video src="assets/media/offlineActivation4.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 4"></video></div>
     <div class="vt auto" style="--d:0.16s"><video src="assets/media/offlineActivation5.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 5"></video></div>
-    <div class="vt auto" style="--d:0.20s"><video src="assets/media/offlineActivation6.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 6"></video></div>
-    <div class="vt auto" style="--d:0.24s"><video src="assets/media/offlineActivation7.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 7"></video></div>
-    <div class="vt auto" style="--d:0.28s"><video src="assets/media/offlineActivation8.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 8"></video></div>
-    <div class="vt auto" style="--d:0.32s"><video src="assets/media/offlineActivation9.mp4" autoplay muted loop playsinline preload="auto" aria-label="Students playing BGMI together, video 9"></video></div>
   </div>
   <div class="wallnote"><i></i>Every video shown in full</div>
   <div class="note rv" style="--d:.5s">Takeaway: A match screenshot shows a game happened. <b>A photo of 18 students crowded around phones in a hostel room shows what BGMI looks like as a campus routine.</b></div>
@@ -537,7 +536,7 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
   <div class="wkhead">
     <div>
     <div class="spot">
-      <div class="big mono">51,000+</div>
+      <div class="big mono">54k+</div>
       <div class="lab"><div class="t">Social views achived in<br/>Welcome Kit Reel</div><div class="s">60 group-play documentations</div></div>
     </div>
     <p class="sub rv" style="--d:.1s">Instagram Reels showcasing the BGMI Welcome Kit in action —<b> highlighting unboxing moments, kit contents, and creator-style presentations that build excitement</b> and strengthen the program’s visibility across campus communities.</p>
@@ -548,14 +547,14 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
       <div class="bul" style="--d:.36s"><span class="bn">03</span><p>An optional booster with no obligation attached — every submission came from MVPs <b>working past their required scope</b>, a useful signal of where the highest-intent group sits heading into Season 3.</p></div>
     </div>
   </div>
-  <div class="mz" data-tree='{"r":[0,{"c":[{"r":[1,2]},{"r":[3,4]}]},5,6]}' data-tree-sm='{"c":[0,{"r":[1,2,3]},{"r":[4,5,6]}]}'>
+  <div class="mz" data-tree='{"r":[0,{"c":[{"r":[1,2,3]},{"r":[4,6]}]},5]}' data-tree-sm='{"c":[{"r":[0,5]},{"r":[1,2,3]},4,6]}'>
     <div class="vt" data-video="assets/media/welcomeKitReel1.mp4" data-hover-only style="--d:0.00s"><video src="assets/media/welcomeKitReel1.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 1"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span><span class="badge">Booster · Welcome Kit Reel</span></div>
-    <div class="vt" data-video="assets/media/welcomeKitReel2.mp4" data-hover-only style="--d:0.04s"><video src="assets/media/welcomeKitReel2.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 2"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
+    <div class="vt zoom" data-video="assets/media/welcomeKitReel2.mp4" data-hover-only style="--d:0.04s"><video src="assets/media/welcomeKitReel2.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 2"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
     <div class="vt" data-video="assets/media/welcomeKitReel3.mp4" data-hover-only style="--d:0.08s"><video src="assets/media/welcomeKitReel3.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 3"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
     <div class="vt" data-video="assets/media/welcomeKitReel4.mp4" data-hover-only style="--d:0.12s"><video src="assets/media/welcomeKitReel4.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 4"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
-    <div class="vt" data-video="assets/media/welcomeKitReel5.mp4" data-hover-only style="--d:0.16s"><video src="assets/media/welcomeKitReel5.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 5"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
+    <div class="vt crop" data-ratio="16/9" data-video="assets/media/welcomeKitReel5.mp4" data-hover-only style="--d:0.16s"><video src="assets/media/welcomeKitReel5.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 5"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
     <div class="vt" data-video="assets/media/welcomeKitReel6.mp4" data-hover-only style="--d:0.20s"><video src="assets/media/welcomeKitReel6.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 6"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
-    <div class="vt" data-video="assets/media/welcomeKitReel7.mp4" data-hover-only style="--d:0.24s"><video src="assets/media/welcomeKitReel7.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 7"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
+    <div class="vt rot" data-video="assets/media/welcomeKitReel7.mp4" data-hover-only style="--d:0.24s"><video src="assets/media/welcomeKitReel7.mp4#t=0.1" muted loop playsinline preload="metadata" aria-label="BGMI Welcome Kit unboxing reel 7"></video><span class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></div>
   </div>
   <div class="wallnote"><i></i>Hover any reel to play · every reel shown in full</div>
   <div class="note rv" style="--d:.5s">Takeaway: A match screenshot shows a game happened. <b>A photo of 18 students crowded around phones in a hostel room shows what BGMI looks like as a campus routine.</b></div>
@@ -715,7 +714,6 @@ const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const SUMMARY=[
  {n:'650',u:'+',l:'TDM Matches Played across season 2'},
  {n:'250',u:'+',l:'Original gameplay reels created &amp; published'},
- {n:'60',u:'+',l:'Gaming groups created'},
  {n:'300',u:'+',l:'Players onboarded in cohorts'},
 ];
 const BOARD=[
@@ -891,14 +889,19 @@ document.querySelectorAll('.fmedia.vfit video').forEach(v=>{
   }
   function layout(box){
     const tiles=[...box.querySelectorAll(':scope>.vt')];
-    const R=tiles.map(t=>{const v=t.querySelector('video');return(v&&v.videoWidth&&v.videoHeight)?v.videoWidth/v.videoHeight:9/16;});
+    const R=tiles.map(t=>{
+      if(t.dataset.ratio){const q=t.dataset.ratio.split('/');return parseFloat(q[0])/parseFloat(q[1]||1);}
+      const v=t.querySelector('video');const ok=v&&v.videoWidth&&v.videoHeight;
+      if(t.classList.contains('rot'))return ok?v.videoHeight/v.videoWidth:16/9;
+      return ok?v.videoWidth/v.videoHeight:9/16;});
     const small=box.clientWidth<760;
     const tree=JSON.parse(small?box.dataset.treeSm:box.dataset.tree);
     const W=box.clientWidth;if(!W)return;
     fit(tree,R);let out=[];let H=place(tree,0,0,W,R,out);
     const maxH=innerHeight*0.8;
     if(!small&&H>maxH){const w2=Math.max(200,(maxH-tree._f.b)/tree._f.a);out=[];H=place(tree,(W-w2)/2,0,w2,R,out);}
-    tiles.forEach((t,i)=>{const p=out[i];if(!p)return;t.style.left=p.x+'px';t.style.top=p.y+'px';t.style.width=p.w+'px';t.style.height=p.h+'px';});
+    tiles.forEach((t,i)=>{const p=out[i];if(!p)return;t.style.left=p.x+'px';t.style.top=p.y+'px';t.style.width=p.w+'px';t.style.height=p.h+'px';
+      if(t.classList.contains('rot')){const v=t.querySelector('video');if(v){v.style.width=p.h+'px';v.style.height=p.w+'px';}}});
     box.style.height=H+'px';
   }
   document.querySelectorAll('.mz').forEach(box=>{
