@@ -127,7 +127,10 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
           mask-image:linear-gradient(180deg,#000 0%,#000 50%,transparent 100%);
   transition:opacity .2s linear}
 .heroPhoto::before{content:"";position:absolute;inset:0;
-  background:url('assets/media/bg-image.jpeg') center/contain no-repeat;
+  background-image:url('assets/media/bg-image.jpeg');
+  background-size:30% auto;
+  background-position:16% center;
+  background-repeat:no-repeat;
   opacity:.42;
   filter:grayscale(.35) contrast(1.08) brightness(.72) sepia(.25) hue-rotate(-12deg);
   animation:photoIn 1.6s var(--ease) .1s backwards}
