@@ -351,7 +351,7 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .mz .vt.rot video{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg)}
 
 /* ===== flex collage (uneven image sizes, top and bottom edges aligned) ===== */
-.mz.flexmz{max-width:1200px;margin-left:auto;margin-right:auto}
+.mz.flexmz{max-width:none}
 .mz.flexmz .vt{cursor:zoom-in;background:#0b0b0b}
 .mz .vt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.25) brightness(.9);transition:filter .45s var(--ease)}
 .mz .vt:hover img{filter:none}
@@ -933,7 +933,7 @@ document.querySelectorAll('.fmedia.vfit video').forEach(v=>{
     const W=box.clientWidth;if(!W)return;
     fit(tree,R);let out=[];let H=place(tree,0,0,W,R,out);
     const maxH=innerHeight*0.8;
-    if(!small&&H>maxH){const w2=Math.max(200,(maxH-tree._f.b)/tree._f.a);out=[];H=place(tree,(W-w2)/2,0,w2,R,out);}
+        if(!small&&H>maxH&&!box.classList.contains('flexmz')){const w2=Math.max(200,(maxH-tree._f.b)/tree._f.a);out=[];H=place(tree,(W-w2)/2,0,w2,R,out);}
     tiles.forEach((t,i)=>{const p=out[i];if(!p)return;t.style.left=p.x+'px';t.style.top=p.y+'px';t.style.width=p.w+'px';t.style.height=p.h+'px';
       if(t.classList.contains('rot')){const v=t.querySelector('video');if(v){v.style.width=p.h+'px';v.style.height=p.w+'px';}}});
     box.style.height=H+'px';
