@@ -293,19 +293,20 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .closing .sig .kmark{height:26px;opacity:.8}
 .closefx{position:absolute;right:-6%;bottom:0;height:82%;opacity:.1;pointer-events:none;filter:grayscale(1)}
 
-/* ===== flex mosaic ===== */
-.wall.flexwall{grid-template-columns:repeat(6,1fr);grid-auto-rows:140px;grid-auto-flow:dense}
-.tile.big{grid-column:span 2;grid-row:span 2}
-.wall.flexwall .tile{cursor:zoom-in}
+/* ===== flex masonry: 9 uneven tiles, each at its own natural shape, nothing cropped ===== */
+.wall.flexwall{display:block;column-count:3;column-gap:12px;max-width:1200px;margin-left:auto;margin-right:auto}
+.wall.flexwall .tile{display:inline-block;width:100%;margin:0 0 12px;break-inside:avoid;-webkit-column-break-inside:avoid;vertical-align:top;cursor:zoom-in;background:#0b0b0b}
+.wall.flexwall .tile::after{display:none}
+.wall.flexwall .tile .fg{width:100%;height:auto;object-fit:initial;transform:none;filter:grayscale(.25) brightness(.9)}
+.wall.flexwall .tile:hover .fg{transform:none;filter:none}
 /* ===== lightbox ===== */
 .lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:4vh 4vw;background:rgba(5,5,5,.92);backdrop-filter:blur(10px);opacity:0;visibility:hidden;cursor:zoom-out;transition:opacity .35s var(--ease),visibility 0s linear .35s}
 .lb.open{opacity:1;visibility:visible;transition:opacity .35s var(--ease),visibility 0s}
 .lb img{max-width:100%;max-height:100%;object-fit:contain;border:1px solid rgba(255,153,50,.35);box-shadow:0 30px 80px -20px rgba(0,0,0,.9),0 0 60px -20px rgba(255,153,50,.4);transform:scale(.94);transition:transform .45s var(--spring)}
 .lb.open img{transform:none}
 .lb .lbx{position:absolute;top:18px;right:22px;font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-@media(max-width:1100px){.wall.flexwall{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:760px){.wall.flexwall{grid-template-columns:repeat(3,1fr);grid-auto-rows:120px}}
-@media(max-width:460px){.wall.flexwall{grid-template-columns:repeat(2,1fr)}.wall.flexwall .tile.big{grid-column:span 2}}
+@media(max-width:760px){.wall.flexwall{column-count:2;column-gap:8px}.wall.flexwall .tile{margin-bottom:8px}}
+@media(max-width:460px){.wall.flexwall{column-gap:6px}.wall.flexwall .tile{margin-bottom:6px}}
 
 /* ===== video mosaics (every box matches its video's exact shape) ===== */
 .wkhead{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:end;margin-top:14px}
@@ -515,24 +516,21 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
   <div class="wall w6" id="photoWall"></div>
 </section> -->
 
-<!-- 9 BOOSTER FLEX (12-image mosaic) -->
+<!-- 9 BOOSTER FLEX (9-image masonry) -->
 <section class="slide wide" id="inmotion" data-title="Flex">
   <div class="ey">08 // BOOSTER — FLEX</div>
   <h2 class="rv">15–20 Players, <span class="o">One Space</span></h2>
   <p class="sub wide rv" style="--d:.08s">Booster Flex: Campus MVPs showcased their BGMI merch across college campuses, posing alongside their college signage to <b>highlight their campus pride and connection </b>with the BGMI Campus MVP community.</p>
   <div class="wall flexwall">
-    <div class="tile big"   style="--d:0s"><img src="assets/media/flex1.jpeg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile"       style="--d:.04s"><img src="assets/media/flex2.jpg"   alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile tall"  style="--d:.08s"><img src="assets/media/flex3.jpg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile wide2" style="--d:.12s"><img src="assets/media/flex4.jpg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile"       style="--d:.16s"><img src="assets/media/flex5.jpg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile wide2" style="--d:.20s"><img src="assets/media/flex6.jpg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile tall"  style="--d:.24s"><img src="assets/media/flex7.png"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile wide2" style="--d:.28s"><img src="assets/media/flex8.jpg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile big"   style="--d:.32s"><img src="assets/media/flex9.jpg"  alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile"       style="--d:.36s"><img src="assets/media/flex10.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile wide2" style="--d:.40s"><img src="assets/media/flex11.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile"       style="--d:.44s"><img src="assets/media/flex12.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:0s"><img class="fg" src="assets/media/flex1.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.04s"><img class="fg" src="assets/media/flex2.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.08s"><img class="fg" src="assets/media/flex3.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.12s"><img class="fg" src="assets/media/flex4.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.16s"><img class="fg" src="assets/media/flex5.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.20s"><img class="fg" src="assets/media/flex6.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.24s"><img class="fg" src="assets/media/flex7.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.28s"><img class="fg" src="assets/media/flex8.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+    <div class="tile" style="--d:.32s"><img class="fg" src="assets/media/flex9.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
   </div>
   <div class="wallnote"><i></i>MVPs flexing the official BGMI Welcome Kit</div>
 </section>
@@ -731,7 +729,7 @@ const BOARD=[
  {t:'WOW',n:'CLUTCH DIARIES',d:'Exciting BGMI gameplay moments that turned into reels',o:'5.4k+',r:'~250 views / reel'}
 ];
 const REELCARDS=[
- {ic:'video',h:'200+ Original Assets',p:'Reels created and published through the official BGMI Campus MVP Instagram handle, in accordance with the Season 2 task guidelines and approval process.'},
+ {ic:'video',h:'240+ Original Assets',p:'Reels created and published through the official BGMI Campus MVP Instagram handle, in accordance with the Season 2 task guidelines and approval process.'},
  {ic:'net',h:'Peer Distribution',p:'Distributed through native student accounts — reaching peers as campus content, not advertising.'},
 ];
 const REELS=[
