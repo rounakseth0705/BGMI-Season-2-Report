@@ -121,7 +121,7 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .hero{padding-top:112px;overflow:hidden}
 .hero .heroChar{position:absolute;right:-4%;bottom:0;height:96%;z-index:0;pointer-events:none;filter:drop-shadow(-30px 0 70px rgba(0,0,0,.7));-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent);opacity:0;animation:charIn 1.4s var(--ease) .25s forwards;transform:translateX(var(--chx,0))}
 @keyframes charIn{to{opacity:1}}
-.heroPhoto{position:absolute;inset:0;z-index:-1;background:url('assets/media/gf-room-wide.jpg') center 30%/cover no-repeat;opacity:.16;filter:grayscale(.55) contrast(1.15) brightness(.62) sepia(.28) hue-rotate(-12deg);-webkit-mask-image:linear-gradient(100deg,#000 8%,rgba(0,0,0,.35) 52%,transparent 78%);mask-image:linear-gradient(100deg,#000 8%,rgba(0,0,0,.35) 52%,transparent 78%)}
+.heroPhoto{position:absolute;inset:0;z-index:-1;background:url('assets/slide1-bg-image.jpeg') center 30%/cover no-repeat;opacity:.34;filter:grayscale(.3) contrast(1.08) brightness(.72);-webkit-mask-image:linear-gradient(100deg,#000 8%,rgba(0,0,0,.35) 52%,transparent 78%);mask-image:linear-gradient(100deg,#000 8%,rgba(0,0,0,.35) 52%,transparent 78%)}
 .zone{position:absolute;right:5%;top:28%;width:min(46vw,560px);aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(154,167,176,.32);box-shadow:0 0 60px rgba(154,167,176,.12) inset,0 0 40px rgba(154,167,176,.1);z-index:0;pointer-events:none;animation:zonepulse 6s ease-in-out infinite}
 .zone::after{content:"";position:absolute;inset:18%;border-radius:50%;border:1px dashed rgba(255,153,50,.4);animation:spin 40s linear infinite}
 @keyframes zonepulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(.93);opacity:1}}
@@ -136,6 +136,9 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .hud .u:last-child{border-right:none}
 .hud .u .n{font-family:var(--disp);font-size:clamp(2rem,4.2vw,3.1rem);line-height:1;color:var(--o);font-variant-numeric:tabular-nums}
 .hud .u .k{font-size:.54rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+.hud .u.hl{margin:-12px 26px -12px 0;padding:12px 22px;border:1px solid rgba(255,153,50,.6);background:linear-gradient(160deg,rgba(255,153,50,.18),rgba(255,153,50,.04));box-shadow:0 0 36px -12px rgba(255,153,50,.75),inset 0 0 0 1px rgba(255,153,50,.08)}
+.hud .u.hl .n{color:var(--o2);text-shadow:0 0 28px rgba(255,153,50,.55)}
+.hud .u.hl .k{color:var(--cream)}
 .hero .season-banner{margin-top:30px;position:relative;z-index:2;display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;padding:11px 20px;border-left:3px solid var(--o);background:linear-gradient(90deg,rgba(255,153,50,.14),transparent)}
 .hero .season-banner .live{display:inline-flex;align-items:center;gap:7px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
 .hero .season-banner .live i{width:8px;height:8px;border-radius:50%;background:var(--o);box-shadow:0 0 10px var(--o);animation:blink 1.4s ease-in-out infinite}
@@ -329,6 +332,12 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .mz .vt.crop video{object-fit:cover}
 .mz .vt.rot video{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg)}
 
+/* ===== flex collage (uneven image sizes, top and bottom edges aligned) ===== */
+.mz.flexmz{max-width:1200px;margin-left:auto;margin-right:auto}
+.mz.flexmz .vt{cursor:zoom-in;background:#0b0b0b}
+.mz .vt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.25) brightness(.9);transition:filter .45s var(--ease)}
+.mz .vt:hover img{filter:none}
+
 /* print-ish safety */
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
 </style>
@@ -381,7 +390,7 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
     <div class="hud">
       <div class="u rv" style="--d:.6s"><div class="n mono"><span data-target="650">0</span>+</div><div class="k">TDM Matches Played</div></div>
       <div class="u rv" style="--d:.68s"><div class="n mono"><span data-target="240">0</span>+</div><div class="k">Gameplay Reels</div></div>
-      <div class="u rv" style="--d:.76s"><div class="n mono"><span data-target="460">0</span>+</div><div class="k">Total Submissions</div></div>
+      <div class="u hl rv" style="--d:.76s"><div class="n mono"><span data-target="460">0</span>+</div><div class="k">Total Submissions</div></div>
       <div class="u rv" style="--d:.84s"><div class="n mono"><span data-target="170">0</span>k+</div><div class="k">Social Views Achieved</div></div>
     </div>
     <div class="hint rv" style="--d:.95s"><span class="dn">↓</span> Scroll · Prepared by HYPEDIN</div>
@@ -516,21 +525,21 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
   <div class="wall w6" id="photoWall"></div>
 </section> -->
 
-<!-- 9 BOOSTER FLEX (9-image masonry) -->
+<!-- 9 BOOSTER FLEX (9-image collage: uneven sizes, top and bottom aligned) -->
 <section class="slide wide" id="inmotion" data-title="Flex">
   <div class="ey">08 // BOOSTER — FLEX</div>
   <h2 class="rv">15–20 Players, <span class="o">One Space</span></h2>
   <p class="sub wide rv" style="--d:.08s">Campus MVPs showcased their BGMI merch across college campuses, posing alongside their college signage to <b>highlight their campus pride and connection </b>with the BGMI Campus MVP community.</p>
-  <div class="wall flexwall">
-    <div class="tile" style="--d:0s"><img class="fg" src="assets/media/flex1.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.04s"><img class="fg" src="assets/media/flex2.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.08s"><img class="fg" src="assets/media/flex3.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.12s"><img class="fg" src="assets/media/flex4.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.16s"><img class="fg" src="assets/media/flex5.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.20s"><img class="fg" src="assets/media/flex6.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.24s"><img class="fg" src="assets/media/flex7.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.28s"><img class="fg" src="assets/media/flex8.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
-    <div class="tile" style="--d:.32s"><img class="fg" src="assets/media/flex9.jpg" alt="BGMI Welcome Kit flex" loading="lazy"/></div>
+  <div class="mz flexmz" data-tree='{"r":[{"c":[0,1]},{"c":[2,{"r":[3,4]},5]},{"c":[6,{"r":[7,8]}]}]}' data-tree-sm='{"c":[{"r":[0,1]},{"r":[2,3,4]},{"r":[5,6]},{"r":[7,8]}]}'>
+    <div class="vt" style="--d:0s"><img src="assets/media/flex1.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.04s"><img src="assets/media/flex2.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.08s"><img src="assets/media/flex3.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.12s"><img src="assets/media/flex4.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.16s"><img src="assets/media/flex5.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.20s"><img src="assets/media/flex6.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.24s"><img src="assets/media/flex7.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.28s"><img src="assets/media/flex8.jpg" alt="BGMI Welcome Kit flex"/></div>
+    <div class="vt" style="--d:.32s"><img src="assets/media/flex9.jpg" alt="BGMI Welcome Kit flex"/></div>
   </div>
   <div class="wallnote"><i></i>MVPs flexing the official BGMI Welcome Kit</div>
 </section>
@@ -870,7 +879,7 @@ document.querySelectorAll('.fmedia.vfit video').forEach(v=>{
 });
 
 /* ============ VIDEO MOSAICS ============ */
-/* Each box is sized to its own video's exact shape, and the set packs into a gap-free rectangle. */
+/* Each box is sized to its own video's (or image's) exact shape, and the set packs into a gap-free rectangle. */
 (function(){
   const G=10;
   function fit(n,R){
@@ -892,6 +901,7 @@ document.querySelectorAll('.fmedia.vfit video').forEach(v=>{
     const tiles=[...box.querySelectorAll(':scope>.vt')];
     const R=tiles.map(t=>{
       if(t.dataset.ratio){const q=t.dataset.ratio.split('/');return parseFloat(q[0])/parseFloat(q[1]||1);}
+      const im=t.querySelector('img');if(im)return im.naturalWidth&&im.naturalHeight?im.naturalWidth/im.naturalHeight:4/5;
       const v=t.querySelector('video');const ok=v&&v.videoWidth&&v.videoHeight;
       if(t.classList.contains('rot'))return ok?v.videoHeight/v.videoWidth:16/9;
       return ok?v.videoWidth/v.videoHeight:9/16;});
@@ -908,6 +918,7 @@ document.querySelectorAll('.fmedia.vfit video').forEach(v=>{
   document.querySelectorAll('.mz').forEach(box=>{
     let raf=0;const q=()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;layout(box);});};
     box.querySelectorAll('video').forEach(v=>v.addEventListener('loadedmetadata',q));
+    box.querySelectorAll('img').forEach(im=>im.addEventListener('load',q));
     if(window.ResizeObserver)new ResizeObserver(q).observe(box);else addEventListener('resize',q);
     layout(box);
   });
@@ -927,7 +938,7 @@ document.querySelectorAll('.fmedia.vfit video').forEach(v=>{
 const lb=$('lb'),lbImg=$('lbImg');
 function lbOpen(src,alt){lbImg.src=src;lbImg.alt=alt||'';lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
 function lbClose(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');}
-document.querySelectorAll('.wall.flexwall .tile img').forEach(img=>{
+document.querySelectorAll('.flexmz .vt img').forEach(img=>{
   img.parentElement.addEventListener('click',()=>lbOpen(img.currentSrc||img.src,img.alt));
 });
 lb.addEventListener('click',lbClose);
