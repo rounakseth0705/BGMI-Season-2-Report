@@ -181,7 +181,7 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 
 /* ===== scoreboard table ===== */
 .board{margin-top:20px;border:1px solid var(--line);background:linear-gradient(170deg,var(--panel),var(--bg));overflow:hidden}
-.brow{display:grid;grid-template-columns:1.5fr 1.6fr .9fr .9fr;gap:0;align-items:center;border-bottom:1px solid var(--line);opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease) var(--d,0s),transform .5s var(--ease) var(--d,0s),background .25s}
+.brow{display:grid;grid-template-columns:1.5fr 1.6fr .9fr;gap:0;align-items:center;border-bottom:1px solid var(--line);opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease) var(--d,0s),transform .5s var(--ease) var(--d,0s),background .25s}
 .slide.in .brow{opacity:1;transform:none}
 .brow:last-child{border-bottom:none}
 .brow:hover{background:rgba(255,153,50,.05)}
@@ -752,13 +752,13 @@ const SUMMARY=[
  {n:'300',u:'+',l:'Players onboarded in cohorts'},
 ];
 const BOARD=[
- {t:'Task 1',n:'TDM / WOW BATTLEGROUND',d:'TDM Matches Played in Season 2',o:'650+',r:'35+ matches / day'},
- {t:'Task 2',n:'Capture the Clutch',d:'Published gameplay reels',o:'112k+',r:'~500 views / reel'},
- {t:'Task 3',n:'OFFLINE ACTIVATION',d:'Group-play photo &amp; video documentation',o:'1.2k+',r:'60 documentations'},
- {t:'Booster',n:'BOOSTER — SQUAD SIGNUPS',d:'Cohort Signups and communities',o:'300+',r:'~15 players / cohort'},
- {t:'Booster',n:'Booster Task - Welcome Kit Unboxing Reel',d:'Instagram reel of Welcome Kit',o:'54k+',r:'~1,400 views / reel'},
+ {t:'Task 1',n:'TDM / WOW BATTLEGROUND',d:'TDM Matches Played in Season 2',o:'650+'},
+ {t:'Task 2',n:'Capture the Clutch',d:'Published gameplay reels',o:'112k+'},
+ {t:'Task 3',n:'OFFLINE ACTIVATION',d:'Group-play photo &amp; video documentation',o:'1.2k+'},
+ {t:'Booster',n:'BOOSTER — SQUAD SIGNUPS',d:'Cohort Signups and communities',o:'300+'},
+ {t:'Booster',n:'Booster Task - Welcome Kit Unboxing Reel',d:'Instagram reel of Welcome Kit',o:'54k+'},
  {t:'WOW',n:'WOW CHALLENGE',d:'WOW maps gameplay',o:'36',r:'~1 reel / day'},
- {t:'WOW',n:'CLUTCH DIARIES',d:'Exciting BGMI gameplay moments that turned into reels',o:'5.4k+',r:'~250 views / reel'}
+ {t:'WOW',n:'CLUTCH DIARIES',d:'Exciting BGMI gameplay moments that turned into reels',o:'5.4k+'}
 ];
 const REELCARDS=[
  {ic:'video',h:'240+ Original Assets',p:'Reels created and published through the official BGMI Campus MVP Instagram handle, in accordance with the Season 2 task guidelines and approval process.'},
@@ -848,8 +848,8 @@ function statHTML(arr){return arr.map((s,i)=>'<div class="stat" style="--sd:'+(i
 $('summaryStats').innerHTML=statHTML(SUMMARY);
 $('closeStats').innerHTML=statHTML(CLOSE);
 
-$('board').innerHTML='<div class="brow head"><div>Task</div><div>Deliverable</div><div>Season 2 output</div><div>Daily run-rate</div></div>'+
- BOARD.map((b,i)=>'<div class="brow" style="--d:'+(0.1+i*0.09)+'s"><div class="tk">'+b.n+'<small>'+b.t+'</small></div><div class="dl">'+b.d+'</div><div class="op mono">'+b.o+'</div><div class="rr">'+b.r+'</div></div>').join('');
+$('board').innerHTML='<div class="brow head"><div>Task</div><div>Deliverable</div><div>Season 2 output</div></div>'+
+ BOARD.map((b,i)=>'<div class="brow" style="--d:'+(0.1+i*0.09)+'s"><div class="tk">'+b.n+'<small>'+b.t+'</small></div><div class="dl">'+b.d+'</div><div class="op mono">'+b.o+'</div></div>').join('');
 
 function card(o,i){return '<div class="card tilt" style="--d:'+(i*0.08)+'s"><span class="ico">'+svg(I[o.ic])+'</span><h4>'+o.h+'</h4><p>'+o.p+'</p></div>';}
 $('reelCards').innerHTML=REELCARDS.map(card).join('');
