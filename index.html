@@ -156,9 +156,11 @@ h2{font-family:var(--brand);text-transform:uppercase;font-weight:400;font-size:c
 .hud .u:last-child{border-right:none}
 .hud .u .n{font-family:var(--disp);font-size:clamp(2rem,4.2vw,3.1rem);line-height:1;color:var(--o);font-variant-numeric:tabular-nums}
 .hud .u .k{font-size:.54rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:7px}
-.hud .u.hl{margin:-12px 26px -12px 0;padding:12px 22px;border:1px solid rgba(255,153,50,.6);background:linear-gradient(160deg,rgba(255,153,50,.18),rgba(255,153,50,.04));box-shadow:0 0 36px -12px rgba(255,153,50,.75),inset 0 0 0 1px rgba(255,153,50,.08)}
-.hud .u.hl .n{color:var(--o2);text-shadow:0 0 28px rgba(255,153,50,.55)}
-.hud .u.hl .k{color:var(--cream)}
+.hud{align-items:flex-end}
+.hud .u.hl{position:relative}
+.hud .u.hl .n{font-size:clamp(2.4rem,5vw,3.8rem);color:var(--o2);text-shadow:0 0 34px rgba(255,153,50,.6)}
+.hud .u.hl .k{color:var(--cream);font-weight:700}
+.hud .u.hl::after{content:"";position:absolute;left:0;right:26px;bottom:-12px;height:2px;background:linear-gradient(90deg,var(--o),transparent);box-shadow:0 0 10px rgba(255,153,50,.6)}
 .hero .season-banner{margin-top:30px;position:relative;z-index:2;display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;padding:11px 20px;border-left:3px solid var(--o);background:linear-gradient(90deg,rgba(255,153,50,.14),transparent)}
 .hero .season-banner .live{display:inline-flex;align-items:center;gap:7px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
 .hero .season-banner .live i{width:8px;height:8px;border-radius:50%;background:var(--o);box-shadow:0 0 10px var(--o);animation:blink 1.4s ease-in-out infinite}
